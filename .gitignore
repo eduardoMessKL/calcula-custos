@@ -1,0 +1,20 @@
+# Ignore node_modules se estiver usando npm para alguma lib
+node_modules/
+
+# Ignore arquivos de build/transpilados (caso use tsc --outDir dist por exemplo)
+dist/
+build/
+
+# Ignore arquivos temporários
+*.log
+*.tmp
+
+# Ignore arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignore configs do VSCode
+.vscode/
+
+# Arquivos TypeScript compilados
+*.js.map
