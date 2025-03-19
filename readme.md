@@ -7,14 +7,10 @@ Considera:
 - Taxa fixa do Mercado Livre (R$6,50 para produtos abaixo de R$79).
 - Taxa percentual do Mercado Livre (11,50%).
 - Imposto de Renda sobre o valor total (12%).
-<br>
-<br/>
 
 Suporte para dois tipos de cálculo de lucro:
 - Percentual (%).
 - Valor absoluto (R$).
-<br>
-<br/>
 
 ### 🚀 Tecnologias utilizadas
 - HTML5
