@@ -44,26 +44,27 @@ function CalcularCustos(event: Event){
                 throw new Error('NULL tipoDeLucro')
             }
 
-            console.log('tipoDeLucro.value', tipoDeLucro.value)
-
-            let lucroAbsoluto: number
+            let lucroLiquido: number
 
             switch(tipoDeLucro.value){
                 case 'porcentagem' : {
+                    let porcentagemContabil: number
+
                     valorEsperadoLucro = valorEsperadoLucro / 100
-                    lucroAbsoluto = valorPrecoDeCusto * valorEsperadoLucro
+                    porcentagemContabil = 1 - valorEsperadoLucro
+
+                    lucroLiquido = (valorPrecoDeCusto / porcentagemContabil) - valorPrecoDeCusto 
 
                     break;
                 }
                 case 'reais' : {
-                    console.log('reais')
-                    lucroAbsoluto = valorEsperadoLucro
+                    lucroLiquido = valorEsperadoLucro
 
                     break;
                 }
                 default : {
                     console.log('default')
-                    lucroAbsoluto = 1
+                    lucroLiquido = 1
 
                     break;
                 }
@@ -73,12 +74,14 @@ function CalcularCustos(event: Event){
             const TAXA_ML_PERCENT: number = (11.50 / 100)
             const TAXA_IR_PERCENT: number = (12 / 100)
 
-            const valorDesejado = lucroAbsoluto + valorPrecoDeCusto
+            const valorDesejado = lucroLiquido + valorPrecoDeCusto
 
             let valorFinal = (valorDesejado + TAXA_FIXA) / (1 - TAXA_ML_PERCENT - TAXA_IR_PERCENT)
+            // let valorFinal = (valorDesejado + TAXA_FIXA) / (1 - TAXA_ML_PERCENT)
 
             if(valorFinal >= 79){
                 valorFinal = valorDesejado / (1 - TAXA_ML_PERCENT - TAXA_IR_PERCENT)
+                // valorFinal = valorDesejado / (1 - TAXA_ML_PERCENT)
             }
 
             resultado.innerHTML = `
