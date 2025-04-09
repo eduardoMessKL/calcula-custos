@@ -4,7 +4,10 @@
     ],
     "routes": [
       { "src": "/", "dest": "app/html/index.html" },
-      { "src": "/about", "dest": "app/html/about.html" }
+      { "src": "/about", "dest": "app/html/about.html" },
+
+      { "src": "/css/(.*)", "dest": "app/css/$1" },
+      { "src": "/dist/(.*)", "dest": "dist/$1" }
     ]
   }
   
