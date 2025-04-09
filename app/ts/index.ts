@@ -1,3 +1,4 @@
+import { objectEach } from 'highcharts'
 import Swal from 'sweetalert2'
 
 const form = document.getElementById('form') as HTMLFormElement
@@ -72,15 +73,15 @@ function CalcularCustos(event: Event){
 
             const TAXA_FIXA: number = 6.50
             const TAXA_ML_PERCENT: number = (11.50 / 100)
-            const TAXA_IR_PERCENT: number = (12 / 100)
+            const TAXA_IR_PERCENT: number = 0
 
             const valorDesejado = lucroLiquido + valorPrecoDeCusto
 
-            let valorFinal = (valorDesejado + TAXA_FIXA) / (1 - TAXA_ML_PERCENT - TAXA_IR_PERCENT)
+            let valorFinal = (valorDesejado + TAXA_FIXA) / (1 - TAXA_ML_PERCENT)
             // let valorFinal = (valorDesejado + TAXA_FIXA) / (1 - TAXA_ML_PERCENT)
 
             if(valorFinal >= 79){
-                valorFinal = valorDesejado / (1 - TAXA_ML_PERCENT - TAXA_IR_PERCENT)
+                valorFinal = valorDesejado / (1 - TAXA_ML_PERCENT)
                 // valorFinal = valorDesejado / (1 - TAXA_ML_PERCENT)
             }
 
