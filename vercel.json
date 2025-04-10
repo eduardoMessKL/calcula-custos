@@ -1,7 +1,7 @@
 {
     "routes": [
-      { "src": "/pages/home", "dest": "/pages/index.html" },
-      { "src": "/pages/about", "dest": "/pages/about.html" }
+      { "src": "/home", "dest": "/pages/index.html" },
+      { "src": "/about", "dest": "/pages/about.html" }
     ]
   }
   
