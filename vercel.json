@@ -1,5 +1,6 @@
 {
     "routes": [
+      { "src": "/", "status": 301, "headers": { "Location": "/home" }},
       { "src": "/home", "dest": "/pages/index.html" },
       { "src": "/about", "dest": "/pages/about.html" }
     ]
