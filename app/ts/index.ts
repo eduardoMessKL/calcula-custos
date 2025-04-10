@@ -1,4 +1,3 @@
-import { objectEach } from 'highcharts'
 import Swal from 'sweetalert2'
 
 const form = document.getElementById('form') as HTMLFormElement
